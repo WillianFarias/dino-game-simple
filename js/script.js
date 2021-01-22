@@ -1,14 +1,18 @@
 const dino = document.querySelector('.dino');
+let isJumping = false;
 
 function handleKeyUp(event) {
   if (event.keyCode === 32) {
-    //console.log('Precionou espaço');
-    jump();
+    if (!isJumping) {
+      jump();
+    }
   }
 }
 
 function jump() {
   let position = 0;
+
+  isJumping = true;
 
   //setInterval define intervalos
   let upInterval = setInterval(() => {
@@ -18,6 +22,7 @@ function jump() {
       let downInterval = setInterval(() => {
         if (position <= 0) {
           clearInterval(downInterval);
+          isJumping = false;
         } else {
           position -= 20;
           dino.style.bottom = position + 'px';
