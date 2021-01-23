@@ -1,6 +1,6 @@
 # dino-game-simple
 
-Recriação joguinho da dino.
+Recriação joguinho do dino google.
 
 ## Tecnologias utilizadas
 
